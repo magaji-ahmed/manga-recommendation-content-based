@@ -24,7 +24,8 @@ st.text('')
 st.text('')
 st.text('')
 
-session.options = st.multiselect('select movies', options=df['ctitle'])
+# session.options = st.multiselect('select movies', options=df['ctitle'])
+session.option = st.selectbox('select movie', options=df['ctitle'])
 
 st.text('')
 st.text('')
@@ -41,7 +42,8 @@ is_clicked = st.button('Recommend')
 if is_clicked:
     # print(session.options[0])
     # print(session.slider_count)
-    dataframe = recommendations(session.options[0], df, simi_mat, session.slider_count)
+    # st.text(session.option[0])
+    dataframe = recommendations(session.option, df, simi_mat, session.slider_count)
 
 st.text('')
 st.text('')
